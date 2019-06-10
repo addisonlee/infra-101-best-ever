@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: infra-101-best-ever-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: scratch
+    spec:
+      containers:
+        - name: scratch
+          image: addisonlee/scratch
+          imagePullPolicy: Always
