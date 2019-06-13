@@ -7,5 +7,4 @@ RUN npm install
 
 COPY . .
 
-ENTRYPOINT ["npm"]
-CMD ["start"]
+CMD ["npm","start"]

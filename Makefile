@@ -8,7 +8,10 @@ build: ## Build docker image for app
 	docker build -t $(IMAGE_NAME) .
 
 shell: ## Open interactive shell for docker container
-	docker run --rm -it --entrypoint sh $(IMAGE_NAME)
+	docker run --rm -it $(IMAGE_NAME) sh
 
 start: ## Start app in docker container
 	docker run -p 3000:3000 --rm $(IMAGE_NAME)
+
+test: ## Test app in docker container
+	docker run --rm -ti $(IMAGE_NAME) npm test
