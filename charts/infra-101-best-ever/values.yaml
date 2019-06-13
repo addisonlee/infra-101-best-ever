@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: 327065681969.dkr.ecr.us-east-2.amazonaws.com/addisonlee/infra-101-best-ever
+  tag: 0.1.3
   pullPolicy: IfNotPresent
 
 # define environment variables here as a map of key: value
