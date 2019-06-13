@@ -18,7 +18,7 @@ For run tests of the application you have to run the next command:
 ### Run app
 For run the node application you have to run the next command:
 
-    docker run --rm node-app infra-101-best-ever   
+    docker run -p 3000:3000 --rm infra-101-best-ever   
     
 ### Inside the container
 
