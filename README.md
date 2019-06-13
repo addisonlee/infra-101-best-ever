@@ -13,7 +13,7 @@ For build the image you have to run the next command:
 ### Run tests
 For run tests of the application you have to run the next command:
 
-    docker run --rm node-ap infra-101-best-ever npm test
+    docker run --rm infra-101-best-ever npm test
         
 ### Run app
 For run the node application you have to run the next command:
