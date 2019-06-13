@@ -19,7 +19,6 @@ pipeline {
         HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
       }
       steps {
-        container('jenkinsxio/jx:2.0.119')
         container('nodejs') {
           sh "npm install"
           sh "CI=true DISPLAY=:99 npm test"
@@ -48,7 +47,6 @@ pipeline {
           sh "echo \$(jx-release-version) > VERSION"
           sh "jx step tag --version \$(cat VERSION)"
         }
-        container('jenkinsxio/jx:2.0.119')
         container('nodejs') {
           sh "npm install"
           sh "CI=true DISPLAY=:99 npm test"
