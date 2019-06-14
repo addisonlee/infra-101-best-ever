@@ -15,9 +15,19 @@ let res = {
 
 describe('Greetings Route', function() {
     describe('CheckFuntion() function', function() {
-        it('Should error out if no name provided ', function() {
+
+        it('Should return error if no name provided is given ', function() {
             checkFuntion(req, res);
+
             expect(res.sendCalledWith).to.contain('error');
+        });
+
+        it('Should return provider name', function() {
+            req.body.name = 'some provider name';
+
+            checkFuntion(req, res);
+
+            expect(res.sendCalledWith).to.contain(req.body.name);
         });
     })
 });
