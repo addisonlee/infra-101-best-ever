@@ -16,14 +16,14 @@ let res = {
 describe('Greetings Route', function() {
     describe('CheckFuntion() function', function() {
 
-        it('Should return error if no name provided is given ', function() {
+        it('Should return error if no name provided ', function() {
             checkFuntion(req, res);
 
             expect(res.sendCalledWith).to.contain('error');
         });
 
-        it('Should return provider name', function() {
-            req.body.name = 'some provider name';
+        it('Should return successful message if name provided', function() {
+            req.body.name = 'some provided name';
 
             checkFuntion(req, res);
 
