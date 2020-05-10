@@ -1,9 +1,9 @@
 module.exports = {
-    checkFuntion: function(req, res) {
+    checkFunction: function(req, res) {
         if (!req.body.name) {
-            res.send('An error occurred: Name is a required parameter');
+            res.send('Error: "name" is a required parameter');
             return;
         }
-        res.send('Returning provided name: '.concat(req.body.name));
+        res.send('Greetings: ' + req.body.name);
     }
 };

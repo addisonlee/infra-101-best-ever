@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-const { checkFuntion } = require('../../routes/greeting');
+const { checkFunction } = require('../../routes/greeting');
 
 let req = {
     body: {},
@@ -13,11 +13,14 @@ let res = {
     }
 };
 
+// I would have rejected this had it been a PR - when it comes to testing endpoints,
+// I prefer integration style tests using something like:
+// https://www.chaijs.com/plugins/chai-http/
 describe('Greetings Route', function() {
-    describe('CheckFuntion() function', function() {
+    describe('checkFunction() function', function() {
 
         it('Should return error if no name provided ', function() {
-            checkFuntion(req, res);
+            checkFunction(req, res);
 
             expect(res.sendCalledWith).to.contain('error');
         });
@@ -25,7 +28,7 @@ describe('Greetings Route', function() {
         it('Should return successful message if name provided', function() {
             req.body.name = 'some provided name';
 
-            checkFuntion(req, res);
+            checkFunction(req, res);
 
             expect(res.sendCalledWith).to.contain(req.body.name);
         });
